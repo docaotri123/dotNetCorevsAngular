@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script src="~/ts/storecustomer.js"></script>
+    <script src="~/ts/main.js"></script>
+
+}
+
+<h2>Shop TRi Do</h2>
+<p>Count:@Model.Count()</p>
+@foreach (var item in Model)
+{
+    <div class="col-md-3">
+        <div class="well well-sm">
+            <img src="~/images/SK-A-3934.jpg" class="img-responsive" />
+            <h3>@item.Category - @item.Size</h3>
+            <ul class="product-props">
+                <li>Price: @item.Price</li>
+                <li>Artist: @item.Artist</li>
+                <li>Title:@item.Title </li>
+                <li>Description: @item.ArtDescription</li>
+            </ul>
+            <button id="buyButton">Buy</button>
+        </div>
+    </div>
+}
+
